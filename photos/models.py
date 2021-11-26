@@ -7,4 +7,6 @@ class Image(models.Model):
     description = models.CharField()
     location = models.CharField(max_length = 10,blank =True)
     category=models.CharField()
-class Catego
+class Category(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    
