@@ -9,4 +9,6 @@ class Image(models.Model):
     category=models.CharField()
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    
+class Location(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+   
