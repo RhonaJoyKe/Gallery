@@ -4,9 +4,9 @@ import datetime as dt
 class Image(models.Model):
     image = models.ImageField(upload_to = 'pictures/' ,blank=True)
     name = models.CharField(max_length =30)
-    description = models.CharField()
+    description = models.CharField(max_length = 10)
     location = models.CharField(max_length = 10,blank =True)
-    category=models.CharField()
+    category=models.CharField(max_length = 10)
     created_on = models.DateTimeField(auto_now_add=True)
     #saves images
     def save_image(self):
