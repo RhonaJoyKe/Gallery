@@ -6,4 +6,5 @@ from django.http  import HttpResponse,Http404
 
 # Create your views here.
 def welcome(request):
-    return render(request,'photos/welcome.html')
+    photos=Image.get_all_images()
+    return render(request,'photos/welcome.html',{'photos':photos})
