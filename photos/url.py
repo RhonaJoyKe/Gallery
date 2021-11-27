@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns=[
    
-    url('^$',views.news_today,name='newsToday'),]
+    url('^$',views.welcome,name='welcome')
+    ]
