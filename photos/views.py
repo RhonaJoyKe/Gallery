@@ -19,4 +19,4 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all_news/search.html',{"message":message})
+        return render(request, 'photos/search.html',{"message":message})
