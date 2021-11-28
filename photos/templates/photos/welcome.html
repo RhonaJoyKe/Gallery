@@ -1,5 +1,5 @@
 {%extends 'photos/base.html'%}
-{% block content %} 
+{% block content %}
 {{ block.super}}
 
 <div class="container">
@@ -8,22 +8,22 @@
   {% for photo in photos %}
 
   <div class="row">
-    <!-- displaying News articles -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    
+    <div class="col-md-4 ">
+    <div class="card">
+      <div class="card-body">
+        <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
+      </div>
     </div>
 
-    <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
-      {{photo}}
-    </div>
 
   </div>
+  </div>
+
+
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There No News Items</h2>
+    <h2 class="text-center">There No ImagesItems</h2>
   </div>
   {% endfor %}
 
