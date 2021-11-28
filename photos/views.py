@@ -6,8 +6,9 @@ from django.http  import HttpResponse,Http404
 
 # Create your views here.
 def welcome(request):
+    categories=Category.get_all_category()
     photos=Image.get_all_images()
-    return render(request,'photos/welcome.html',{'photos':photos})
+    return render(request,'photos/welcome.html',{'photos':photos},{'categories':categories})
 def search_results(request):
 
     if 'name' in request.GET and request.GET["name"]:
@@ -20,3 +21,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'photos/search.html',{"message":message})
+def get_category(request,category):
+    images=Image.filter_by_category(category)
+
+    return render (request,'photos/category.html',{'images':images})

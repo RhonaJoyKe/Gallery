@@ -5,9 +5,10 @@ class Image(models.Model):
     image = models.ImageField(upload_to = 'pictures/' ,blank=True)
     name = models.CharField(max_length =30)
     description = models.CharField(max_length = 10)
-    location = models.CharField(max_length = 10,blank =True)
-    category=models.CharField(max_length = 10)
+    location = models.ForeignKey('Location',on_delete=models.CASCADE)
+    category=models.ForeignKey('Category',on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
+    
     #saves images
     def save_image(self):
         self.save()
@@ -27,6 +28,7 @@ class Image(models.Model):
     def get_all_images(cls):
         images = Image.objects.all()
         return images
+    
 
     # get image by id
     @classmethod
@@ -53,6 +55,10 @@ class Image(models.Model):
         return images
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    @classmethod
+    def get_all_category(cls):
+        categories = Category.objects.all()
+        return categories
 
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)
