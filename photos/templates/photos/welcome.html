@@ -4,30 +4,34 @@
 {{ block.super}}
 
 <div class="container">
+ 
  <div class="row">
-    <div class="col-md-4">
-      {% for category in categories %}
+  {% for category in categories %}
+    <div class="col-md-3">
       <a href="{% url 'get_category' category.id %}">{{category.name}}</a>
     </div>
     {% endfor %}
-    {% for photo in photos %}
-    <div class="col-md-4 ">
-    <div class="card">
-      <div class="card-body">
-        {% if photo.image %}
-        <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
-        
-        {% else %}
-        
-          <h2 class="text-center">There No ImagesItems</h2>
-          {% endif %}
-      </div>
-
+ </div>
+ <div class="row">
+  {% for photo in photos %}
+  <div class="col-md-4" >
+   <img src="{{photo.image.url}}" class="img-responsive" alt="Image">
     </div>
-  </div> 
+  
+
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
   {% endfor %}
-<div class="col-md-4"></div>
-</div>
-</div>
+ </div>
+ 
+ </div>
+    
+    
+  
+   
+  
+
+
+
 
 {% endblock %}
