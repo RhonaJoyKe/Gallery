@@ -1,15 +1,14 @@
-# Personal Gallery
+# RJ  Gallery
 
-#### Created By Wilson Kinyua Muthoni on 08-10-2021
+#### Created By Rhonajoy
 
 ## Description
 
-A personal gallery is a simple photo gallery web application to showcase beautiful pictures and designs. Users get to view photos updated by the site admin. Users can see photos based on the location, by clicking on the listed locations in the menu. They can also copy the link to a photo to paste at their discretion. The search function will search photos based on the categories.
-
+A django based gallery where people are able to view different images from different categories and taken in different locations. A user is also able to search an image based on its name.
 ## Setup Requirements
 
 - Git
-- Web-browser or your choice
+- Web-browser of your choice
 - Github
 - Django 
 - Pip
@@ -78,29 +77,21 @@ The following languages have been used on this project:
 
 ## Setup/Installation Requirements
 
-- Live link to view the project <a target="_blank" href="https://gallery-wk.herokuapp.com/">View Gallery</a>
+- Live link to view the project <a target="_blank" href="">View Gallery</a>
 
-## Some Screenshots
 
-  <img src="./screenshots/1.png" alt="screenshot" />
-
-  <img src="./screenshots/2.png" alt="screenshot" />
-
-  <img src="./screenshots/3.png" alt="screenshot" />
-
-  <img src="./screenshots/4.png" alt="screenshot" />
 
     
 ## Known Bugs
 
-So far so good there are no bugs related to this project 😎
+ no bugs related to this project 
 
-## Support and contact details 🙂
+## Support and contact details 
 
 To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
 
-- Email: wilson@developerwilson.com
-- Phone: +254717255460
+- Email: rhonajoy8@gmailcom
+- Phone: +254706555078
 
 ## License
 
