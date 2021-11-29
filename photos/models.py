@@ -2,9 +2,9 @@ from django.db import models
 import datetime as dt
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'pictures/' ,blank=True)
+    image = models.ImageField(upload_to = 'pictures/')
     name = models.CharField(max_length =30)
-    description = models.CharField(max_length = 10)
+    description = models.CharField(max_length = 100)
     location = models.ForeignKey('Location',on_delete=models.CASCADE)
     category=models.ForeignKey('Category',on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)

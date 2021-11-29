@@ -8,7 +8,9 @@ from django.http  import HttpResponse,Http404
 def welcome(request):
     categories=Category.get_all_category()
     photos=Image.get_all_images()
-    return render(request,'photos/welcome.html',{'photos':photos},{'categories':categories})
+
+   
+    return render(request,'photos/welcome.html',{'photos':photos,'categories':categories})
 def search_results(request):
 
     if 'name' in request.GET and request.GET["name"]:
