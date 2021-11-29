@@ -6,15 +6,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Locations
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Nairobi</a></li>
-            <li><a class="dropdown-item" href="#">Kisumu</a></li>
-            <li><a class="dropdown-item" href="#">Nakuru</a></li>
-            <li><a class="dropdown-item" href="#">Naivasha</a></li>
-            <li><a class="dropdown-item" href="#">Meru</a></li>
+            {% for  location in locations %}
+            <li><a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a></li>
+            {% endfor %}
           </ul>
         </li>
         <form class="d-flex"role="search" action="{% url 'search_results' %}">

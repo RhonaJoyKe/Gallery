@@ -38,8 +38,8 @@ class Image(models.Model):
 
     # get images by location
     @classmethod
-    def filter_by_location(cls, location):
-        images = Image.objects.filter(location__name=location)
+    def filter_by_location(cls, location_id):
+        images = Image.objects.filter(location__id=location_id)
         return images
 
     # get images by category

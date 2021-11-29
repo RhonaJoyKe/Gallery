@@ -8,6 +8,8 @@ urlpatterns=[
     url('^$',views.welcome,name='welcome'),
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^category/(\d+)', views.get_category, name='get_category'),
+    url(r'^location/(\d+)', views.get_location, name='get_location')
+
 
     ]
 if settings.DEBUG:
