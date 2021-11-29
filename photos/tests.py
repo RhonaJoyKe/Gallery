@@ -88,6 +88,12 @@ class ImageTestCase(TestCase):
         """
         image = Image.objects.get(name="Test Image")
         self.assertEqual(image.category.name, "Test Category")
+    def test_category_str(self):
+        """
+        Test that the category string representation is correct
+        """
+        category = Category.objects.get(name="Test Category")
+        self.assertEqual(str(category), "Test Category")
 
     def test_image_image(self):
         """
