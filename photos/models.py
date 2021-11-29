@@ -44,8 +44,8 @@ class Image(models.Model):
 
     # get images by category
     @classmethod
-    def filter_by_category(cls, category):
-        images = Image.objects.filter(category__name=category)
+    def filter_by_category(cls, category_id):
+        images = Image.objects.filter(category_id=category_id)
         return images
 
     # search images
@@ -59,6 +59,8 @@ class Category(models.Model):
     def get_all_category(cls):
         categories = Category.objects.all()
         return categories
+    def __str__(self):
+        return self.name
 
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)

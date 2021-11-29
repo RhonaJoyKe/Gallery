@@ -23,7 +23,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'photos/search.html',{"message":message})
-def get_category(request,category):
-    images=Image.filter_by_category(category)
+def get_category(request,category_id):
+    images=Image.filter_by_category(category_id)
 
     return render (request,'photos/category.html',{'images':images})
