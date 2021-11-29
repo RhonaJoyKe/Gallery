@@ -27,3 +27,8 @@ def get_category(request,category_id):
     images=Image.filter_by_category(category_id)
 
     return render (request,'photos/category.html',{'images':images})
+def get_location(request,category_id):
+    images=Image.filter_by_category(category_id)
+
+    return render (request,'photos/category.html',{'images':images})
+

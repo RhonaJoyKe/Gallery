@@ -18,10 +18,48 @@
  <div class="row">
   {% for photo in photos %}
   <div class="col-md-4" >
-   <img src="{{photo.image.url}}" class="img-responsive" alt="Image" height="300px"width="100%">
+   <a href=""data-bs-toggle="modal" data-bs-target="#exampleModal{{photo.id}}">
+     <img src="{{photo.image.url}}" class="img-responsive" alt="Image" height="300px"width="100%">
+    </a>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal{{photo.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{photo.name}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{photo.description}}</p>
+        <div class="row">
+          <img src="{{photo.image.url}}" class="img-fluid" alt="Image" >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
+
+
+
   {% endfor %}
- 
+<!-- hello -->
+
+
+
+
+
+<!-- hello -->
+
+
+
   <div class="col-md-4"></div>
   <div class="col-md-4"></div>
  </div>
