@@ -1,8 +1,10 @@
 from django.db import models
 import datetime as dt
+from cloudinary.models import CloudinaryField
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'pictures/')
+    # image = models.ImageField(upload_to = 'pictures/')
+    image = CloudinaryField('pictures')
     name = models.CharField(max_length =30)
     description = models.CharField(max_length = 100)
     location = models.ForeignKey('Location',on_delete=models.CASCADE)

@@ -11,7 +11,7 @@ def welcome(request):
     photos=Image.get_all_images()
 
    
-    return render(request,'photos/welcome.html',{'photos':photos,'categories':categories,'locations':locations})
+    return render(request,'welcome.html',{'photos':photos,'categories':categories,'locations':locations})
 def search_results(request):
 
     if 'name' in request.GET and request.GET["name"]:
@@ -19,17 +19,17 @@ def search_results(request):
         searched_articles = Image.search_image(search_term)
         message = f"{search_term}"
 
-        return render(request, 'photos/search.html',{"message":message,"images": searched_articles})
+        return render(request, 'search.html',{"message":message,"images": searched_articles})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'photos/search.html',{"message":message})
+        return render(request, 'search.html',{"message":message})
 def get_category(request,category_id):
     images=Image.filter_by_category(category_id)
 
-    return render (request,'photos/category.html',{'images':images})
+    return render (request,'category.html',{'images':images})
 def get_location(request,location_id):
     images=Image.filter_by_location(location_id)
 
-    return render (request,'photos/location.html',{'images':images})
+    return render (request,'location.html',{'images':images})
 
