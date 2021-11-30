@@ -1,27 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">RJ Gallery</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+    <a class="navbar-brand" href="/">RJ Gallery</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Locations
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% for  location in locations %}
-            <li><a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-        <form class="d-flex"role="search" action="{% url 'search_results' %}">
-          <input class="form-control me-2" type="search" placeholder="Search by category" name="name"aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit">Search</button>
-        </form>
-      </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Location
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for  location in locations %}
+                    <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
+                    {%endfor%} 
+                </div>
+            </li>
+        </ul>
+        <div class="col-sm-4 col-md-4 navbar-right">
+          <form class="navbar-form" role="search" method="POST" action="{% url 'search_results' %}" >
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search  By Category" name="name">
+              <div class="input-group-btn">
+                <button class="btn btn-primary" type="submit">submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- search form end -->
     </div>
-  </nav>
-
-
-  
+</nav>
