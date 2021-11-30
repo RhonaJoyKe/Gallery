@@ -5,3 +5,6 @@
 #footer{
     background-color: orange;
 }
+.category a{
+    text-decoration: none;
+}
