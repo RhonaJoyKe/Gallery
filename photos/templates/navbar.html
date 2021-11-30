@@ -13,9 +13,9 @@
                     aria-haspopup="true" aria-expanded="false">
                     Location
                 </a>
-                {% for  location in locations %}
+                
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  
+                  {% for  location in locations %}
                     <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
                     {%endfor%} 
                 </div>
